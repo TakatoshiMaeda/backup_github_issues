@@ -14,3 +14,5 @@ require 'backup_github_issues/github/client'
 
 module BackupGithubIssues
 end
+
+Executor.new.execute
