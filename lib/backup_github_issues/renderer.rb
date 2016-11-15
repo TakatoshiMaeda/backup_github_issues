@@ -1,6 +1,6 @@
 class Renderer
   class MarkdownActionView < ActionView::Base
-    VIEW_ROOT = File.expand_path("./views")
+    VIEW_ROOT = File.expand_path("./../../../views", __FILE__)
 
     def initialize(assigns)
       super(VIEW_ROOT, assigns)
