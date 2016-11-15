@@ -1,0 +1,13 @@
+##### <%= event.path %>
+
+```diff
+<%= raw(event.diff_hunk) %>
+```
+
+<% event.comments.each do |comment| %>
+
+<%= render 'event_by.md.erb', event: 'Commented', username: comment.username, timestamp: comment.updated_at %>
+
+<%= raw(comment.body) %>
+
+<% end %>

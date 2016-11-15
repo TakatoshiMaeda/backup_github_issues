@@ -1,3 +1,6 @@
+/backup/
+config.yml
+
 /.bundle/
 /.yardoc
 /Gemfile.lock
@@ -89,5 +92,3 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-
-

@@ -1,0 +1,18 @@
+<%= @repo.full_name %>
+============
+
+# Issues
+
+| # | State | title | author | created_at |
+|---|-------|-------|--------|------------|
+<% @issues.each do |issue| %>
+| <%= "[#{issue.number}](issue/#{issue.number}.md)" %> | <%= issue.state%> | <%= issue.title%> | <%= issue.user.login %> | <%= issue.created_at %> |
+<% end %>
+
+# Pull Requests
+
+| # | State | title | author | created_at |
+|---|-------|-------|--------|------------|
+<% @pulls.each do |issue| %>
+| <%= "[#{issue.number}](pull/#{issue.number}.md)" %> | <%= issue.state%> | <%= issue.title%> | <%= issue.user.login %> | <%= issue.created_at %> |
+<% end %>

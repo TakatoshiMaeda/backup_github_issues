@@ -21,7 +21,16 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency 'octokit', '~> 4.0'
+  spec.add_dependency 'actionview', '~> 5.0'
+  spec.add_dependency 'haml', '~> 4.0'
+  spec.add_dependency 'hashie', '~> 3.4'
+  spec.add_dependency 'open_uri_redirections', '~> 0.2'
+  spec.add_dependency 'aws-sdk', '~> 2.6'
+  spec.add_dependency 'down'
+
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency 'pry'
 end

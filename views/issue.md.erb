@@ -1,0 +1,26 @@
+<%= @issue.title %> (#<%= @issue.number  %>)
+================
+
+| key | value |
+|---|---|
+| Author | <%= @issue.user.login %> |
+| State | <%= @issue.state %> |
+| Labels | <%= @issue.labels.map{|label| code(label.name) }.join(' ') %> |
+| Milestone | <%= code(@issue.milestone&.title) %> |
+| Assignee | <%= @issue.assignee&.login %> |
+| Original | <%= @issue.html_url %> |
+| CretedAt | <%= @issue.created_at %> |
+
+<%= raw(@issue.body) %>
+
+# Conversation
+
+<% @events.each do |event| %>
+-------------------------
+<%= render "#{event.kind}.md.erb", event: event %>
+<% end %>
+-------------------------
+
+<% if @diff_files.present? %>
+<%= render 'diff_files.md.erb', diff_files: @diff_files%>
+<% end %>

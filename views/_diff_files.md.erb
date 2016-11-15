@@ -1,0 +1,7 @@
+# File Changed
+
+<% diff_files.each do |file| %>
+##### <%= file.filename %>
+
+<%= raw(file.markdown) %>
+<% end %>
