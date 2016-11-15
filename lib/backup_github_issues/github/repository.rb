@@ -25,7 +25,7 @@ module Github
     end
 
     def markdown_path
-      "#{data.full_name}_index.md"
+      "#{@data.owner.login}_#{@data.name}_index.md"
     end
 
     def download_blob(diff_file)
