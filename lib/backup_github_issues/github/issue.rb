@@ -70,6 +70,7 @@ module Github
       diff_files = client.pull_files(repo.full_name, data.number).map.with_index do |diff_file, idx|
         if IMG_EXTNAMES.include?(File.extname(diff_file.filename))
           begin
+            basekey = "#{photo_save_prefix}/diff_file"
             if diff_file.sha.nil?
               image_url = client.get(diff_file.contents_url).download_url
               new_url = download_url_and_upload(image_url, basekey, idx)
