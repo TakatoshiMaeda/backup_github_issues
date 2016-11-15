@@ -57,7 +57,7 @@ module Github
       extname = File.extname(URI.parse(URI.encode(url)).path)
       key = "#{basekey}/#{idx}#{extname}"
       if s3.list_objects(bucket: config.bucket_name, prefix: key).contents.empty?
-        puts "Upload an image to S3, url=#{url}"
+        puts "Copy an image to S3, from #{url} to #{key}"
 
         file = yield
 
