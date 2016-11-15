@@ -15,7 +15,7 @@ class Executor
       puts "# #{repo.full_name}"
 
       (issues = repo.issues).each do |issue|
-        next if issue.skip?
+        next if renderer.skip?(issue)
         puts "- #{issue.number} #{issue.title}"
 
         renderer.render_issue_page(issue)

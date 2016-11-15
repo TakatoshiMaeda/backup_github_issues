@@ -46,6 +46,10 @@ class Renderer
     write_file("index.md", md)
   end
 
+  def skip?(issue)
+    issue.skip?(BACKUP_DIR)
+  end
+
   private
 
   def render(template, assigns)

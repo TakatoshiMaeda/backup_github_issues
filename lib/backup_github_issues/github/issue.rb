@@ -97,8 +97,8 @@ module Github
       end
     end
 
-    def skip?
-      File.exists?(markdown_path)
+    def skip?(backup_dir)
+      File.exists?("#{backup_dir}/#{markdown_path}")
     end
 
     def markdown_path
