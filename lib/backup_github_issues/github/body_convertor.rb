@@ -62,7 +62,12 @@ module Github
         file = yield
 
         # Upload image to Aws::S3
-        s3.put_object(bucket: config.bucket_name, key: key, body: file)
+        content_type = "image/#{extname.gsub(/^\.(.+)$/, '\1')}"
+        s3.put_object(
+          bucket: config.bucket_name,
+          key: key,
+          body: file,
+          content_type: content_type)
 
         sleep 0.5
       end
