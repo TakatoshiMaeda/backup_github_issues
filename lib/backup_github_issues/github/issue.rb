@@ -102,7 +102,7 @@ module Github
     end
 
     def markdown_path
-      "#{repo.owner_name}_#{repo.name}_#{self.type}_#{self.number}.md"
+      "#{repo.owner_name}/#{repo.name}/#{self.type}/#{self.number}.md"
     end
 
     def photo_save_prefix

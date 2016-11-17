@@ -2,5 +2,5 @@
 ===========
 
 <% @repos.each do |repo| %>
-- [<%= repo.full_name %>](<%= repo.full_name%>/index.md)
+- [<%= repo.full_name %>](<%= repo.owner_name%>/<%= repo.name%>/index.md)
 <% end %>

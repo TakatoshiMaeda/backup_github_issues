@@ -81,7 +81,7 @@ module Github
           matches = matched.match(/#(\d)(.+)/)
           issue = repo.issue(matches[1])
 
-          "[##{issue.number}](#{repo.owner_name}_#{repo.name}_#{issue.type}_#{issue.number}.md)#{matches[2]}"
+          "[##{issue.number}](./../../../#{repo.owner_name}/#{repo.name}/#{issue.type}/#{issue.number}.md)#{matches[2]}"
         rescue
           matched[0]
         end
