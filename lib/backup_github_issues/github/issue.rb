@@ -79,7 +79,8 @@ module Github
             end
 
             diff_file[:markdown] = <<~EOS
-            #{diff_file.status}
+            `#{diff_file.status}`
+
             ![](#{new_url})
             EOS
           rescue Octokit::NotFound, Down::NotFound => e
@@ -87,6 +88,8 @@ module Github
           end
         else
           diff_file[:markdown] = <<~EOS
+          `#{diff_file.status}`
+
           ```diff
           #{diff_file.patch}
           ```
