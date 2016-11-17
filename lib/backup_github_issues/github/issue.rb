@@ -27,6 +27,14 @@ module Github
       issue? ? 'issue' : 'pull'
     end
 
+    def state
+      if client.issue_events(repo.full_name, @data.number).any?{ |event| event.event == 'merged'}
+        'merged'
+      else
+        @data.state
+      end
+    end
+
     def body
       return @body if @body.present?
 
