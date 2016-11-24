@@ -61,7 +61,7 @@ module Github
       return [] if issue?
 
       client.review_comments(repo.full_name, data.number).
-        group_by {|comment| comment[:original_position]}.
+        group_by {|comment| comment.diff_hunk}.
         map {|key, comments| Github::ReviewComment.new(client, repo, self, comments) }
     end
 
