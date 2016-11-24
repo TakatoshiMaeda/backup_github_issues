@@ -34,10 +34,10 @@ class Executor
   end
 
   def target_repo?(repo)
-    ENV['REPO'] == repo.name
+    ENV['REPO'].nil? || ENV['REPO'] == repo.name
   end
 
   def target_issue?(issue)
-    ENV['ISSUE_NUM'] == issue.number.to_s
+    ENV['ISSUE_NUM'].nil? || ENV['ISSUE_NUM'] == issue.number.to_s
   end
 end
